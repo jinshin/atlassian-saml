@@ -15,7 +15,7 @@ public class SAMLConfig {
     public static final String ENTITY_ID_SETTING = "saml2.entityId";
     public static final String LOGIN_URL_SETTING = "saml2.loginUrl";
     public static final String LOGOUT_URL_SETTING = "saml2.logoutUrl";
-    public static final String UID_ATTRIBUTE_SETTING = "salm2.uidAttribute";
+    public static final String UID_ATTRIBUTE_SETTING = "saml2.uidAttribute";
     public static final String X509_CERTIFICATE_SETTING = "saml2.x509Certificate";
     public static final String IDP_REQUIRED_SETTING = "saml2.idpRequired";
     public static final String REDIRECT_URL_SETTING = "saml2.redirectUrl";
