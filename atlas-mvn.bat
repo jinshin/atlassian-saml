@@ -116,7 +116,7 @@ if "%AMPS_PLUGIN_VERSION_STRIPPED%" GEQ "8" (
 )
 
 set MVN_COMMAND=
-call set MVN_COMMAND=%%MVN_COMMAND:${mavenPluginName}=%MVN_PLUGIN%%%
+call set MVN_COMMAND=%%MVN_COMMAND%%
 
 rem ------------------------------------------------------------------------------------
 rem Check for conflicts between Amps version and plugin artifact ID in plugin pom file
