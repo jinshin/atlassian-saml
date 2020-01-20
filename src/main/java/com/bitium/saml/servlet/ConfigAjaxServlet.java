@@ -18,11 +18,13 @@ import javax.servlet.http.HttpServletResponse;
 public class ConfigAjaxServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+/*
     private SAMLConfig saml2Config;
 
     public void setSaml2Config(SAMLConfig saml2Config) {
         this.saml2Config = saml2Config;
     }
+*/
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -30,9 +32,11 @@ public class ConfigAjaxServlet extends HttpServlet {
         String parameter = request.getParameter("param");
         if (parameter != null) {
             if (parameter.equals("idpRequired")) {
-                response.getOutputStream().write(saml2Config.getIdpRequired().getBytes());
+                //response.getOutputStream().write(saml2Config.getIdpRequired().getBytes());
+		response.getOutputStream().write("false".getBytes());
             } else if (parameter.equals("logoutUrl")) {
-                response.getOutputStream().write(saml2Config.getLogoutUrl().getBytes());
+                //response.getOutputStream().write(saml2Config.getLogoutUrl().getBytes());
+		response.getOutputStream().write("".getBytes());
             }
         }
     }
