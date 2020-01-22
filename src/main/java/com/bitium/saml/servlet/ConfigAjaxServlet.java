@@ -8,6 +8,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import com.atlassian.sal.api.pluginsettings.PluginSettings;
+import com.atlassian.sal.api.pluginsettings.PluginSettingsFactory;
 
 /**
  * For now it does only one function: returns idpRequired Field
@@ -36,7 +38,7 @@ public class ConfigAjaxServlet extends HttpServlet {
 		response.getOutputStream().write("false".getBytes());
             } else if (parameter.equals("logoutUrl")) {
                 //response.getOutputStream().write(saml2Config.getLogoutUrl().getBytes());
-		response.getOutputStream().write("".getBytes());
+		response.getOutputStream().write("https://".getBytes());
             }
         }
     }

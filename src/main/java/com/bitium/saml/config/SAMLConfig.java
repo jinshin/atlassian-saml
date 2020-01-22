@@ -21,7 +21,7 @@ public class SAMLConfig {
     public static final String REDIRECT_URL_SETTING = "saml2.redirectUrl";
     public static final String AUTO_CREATE_USER_SETTING = "saml2.autoCreateUser";
     public static final String AUTO_CREATE_USER_DEFAULT_GROUP_SETTING = "saml2.autoCreateUserDefaultGroup";
-	public static final String MAX_AUTHENTICATION_AGE = "saml2.maxAuthenticationAge";
+    public static final String MAX_AUTHENTICATION_AGE = "saml2.maxAuthenticationAge";
 
     public void setPluginSettingsFactory(PluginSettingsFactory pluginSettingsFactory) {
         this.pluginSettings = pluginSettingsFactory.createGlobalSettings();
