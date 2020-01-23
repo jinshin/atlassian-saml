@@ -4,7 +4,7 @@
 	<groupId>com.bitium.saml</groupId>
 	<artifactId>SAML2Commons</artifactId>
 	<packaging>jar</packaging>
-	<version>1.1.2</version>
+	<version>1.1.4</version>
 	<name>SAML2Commons</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>

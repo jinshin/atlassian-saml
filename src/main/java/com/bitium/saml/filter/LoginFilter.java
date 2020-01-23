@@ -12,6 +12,8 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import com.atlassian.sal.api.pluginsettings.PluginSettings;
+import com.atlassian.sal.api.pluginsettings.PluginSettingsFactory;
 
 import com.atlassian.sal.api.auth.LoginUriProvider;
 import com.bitium.saml.config.SAMLConfig;
@@ -21,6 +23,11 @@ public class LoginFilter implements Filter {
     private SAMLConfig config;
     private LoginUriProvider loginUriProvider;
 
+    public LoginFilter(PluginSettingsFactory pluginSettingsFactory) {
+	    config = new SAMLConfig();
+            config.setPluginSettingsFactory(pluginSettingsFactory);
+        }
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
     }
@@ -28,8 +35,8 @@ public class LoginFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response,
                          FilterChain chain) throws IOException, ServletException {
-        //boolean idpRequired = config.getIdpRequiredFlag();
-        boolean idpRequired = false;
+        boolean idpRequired = config.getIdpRequiredFlag();
+        //boolean idpRequired = false;
         HttpServletRequest req = (HttpServletRequest)request;
         HttpServletResponse res = (HttpServletResponse)response;
 

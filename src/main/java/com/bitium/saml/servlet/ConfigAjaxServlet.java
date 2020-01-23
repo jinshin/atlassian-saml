@@ -28,17 +28,25 @@ public class ConfigAjaxServlet extends HttpServlet {
     }
 */
 
+    private SAMLConfig saml2Config;
+
+    public ConfigAjaxServlet(PluginSettingsFactory pluginSettingsFactory) {
+	    saml2Config = new SAMLConfig();
+            saml2Config.setPluginSettingsFactory(pluginSettingsFactory);
+        }
+
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String parameter = request.getParameter("param");
         if (parameter != null) {
             if (parameter.equals("idpRequired")) {
-                //response.getOutputStream().write(saml2Config.getIdpRequired().getBytes());
-		response.getOutputStream().write("false".getBytes());
+                response.getOutputStream().write(saml2Config.getIdpRequired().getBytes());
+		//response.getOutputStream().write("false".getBytes());
             } else if (parameter.equals("logoutUrl")) {
-                //response.getOutputStream().write(saml2Config.getLogoutUrl().getBytes());
-		response.getOutputStream().write("https://".getBytes());
+                response.getOutputStream().write(saml2Config.getLogoutUrl().getBytes());
+		//response.getOutputStream().write("https://sso.fraglab.com/adfs/ls/?wa=wsignout1.0".getBytes());
             }
         }
     }
