@@ -43,10 +43,8 @@ public class ConfigAjaxServlet extends HttpServlet {
         if (parameter != null) {
             if (parameter.equals("idpRequired")) {
                 response.getOutputStream().write(saml2Config.getIdpRequired().getBytes());
-		//response.getOutputStream().write("false".getBytes());
             } else if (parameter.equals("logoutUrl")) {
                 response.getOutputStream().write(saml2Config.getLogoutUrl().getBytes());
-		//response.getOutputStream().write("https://sso.fraglab.com/adfs/ls/?wa=wsignout1.0".getBytes());
             }
         }
     }
