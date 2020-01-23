@@ -45,6 +45,8 @@ public class ConfigAjaxServlet extends HttpServlet {
                 response.getOutputStream().write(saml2Config.getIdpRequired().getBytes());
             } else if (parameter.equals("logoutUrl")) {
                 response.getOutputStream().write(saml2Config.getLogoutUrl().getBytes());
+            } else if (parameter.equals("buttonText")) {
+                response.getOutputStream().write(saml2Config.getButtonText().getBytes());
             }
         }
     }

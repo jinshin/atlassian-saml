@@ -15,6 +15,7 @@ public class SAMLConfig {
     public static final String ENTITY_ID_SETTING = "saml2.entityId";
     public static final String LOGIN_URL_SETTING = "saml2.loginUrl";
     public static final String LOGOUT_URL_SETTING = "saml2.logoutUrl";
+    public static final String BUTTON_TEXT_SETTING = "saml2.buttonText";
     public static final String UID_ATTRIBUTE_SETTING = "saml2.uidAttribute";
     public static final String X509_CERTIFICATE_SETTING = "saml2.x509Certificate";
     public static final String IDP_REQUIRED_SETTING = "saml2.idpRequired";
@@ -33,6 +34,10 @@ public class SAMLConfig {
 
     public void setLogoutUrl(String logoutUrl) {
         pluginSettings.put(LOGOUT_URL_SETTING, logoutUrl);
+    }
+
+    public void setButtonText(String buttonText) {
+        pluginSettings.put(BUTTON_TEXT_SETTING, buttonText);
     }
 
     public void setEntityId(String entityId) {
@@ -106,6 +111,10 @@ public class SAMLConfig {
 
     public String getLogoutUrl() {
         return StringUtils.defaultString((String)pluginSettings.get(LOGOUT_URL_SETTING));
+    }
+
+    public String getButtonText() {
+        return StringUtils.defaultString((String)pluginSettings.get(BUTTON_TEXT_SETTING),"SSO Login");
     }
 
     public String getIdpEntityId() {
