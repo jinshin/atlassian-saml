@@ -53,7 +53,8 @@ public abstract class SsoLoginServlet extends HttpServlet {
             WebSSOProfileOptions options = new WebSSOProfileOptions();
             options.setBinding(org.opensaml.common.xml.SAMLConstants.SAML2_REDIRECT_BINDING_URI);
             options.setIncludeScoping(false);
-
+            // jbgi Force authentication at every login (workaround https://github.com/bitium/jira-saml-plugin/issues/35):
+            //options.setForceAuthN(true);
             // Send request
             WebSSOProfile webSSOprofile = new WebSSOProfileImpl(context.getSamlProcessor(), context.getMetadataManager());
             webSSOprofile.sendAuthenticationRequest(messageContext, options);

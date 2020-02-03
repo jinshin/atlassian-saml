@@ -19,6 +19,8 @@ public class SAMLConfig {
     public static final String UID_ATTRIBUTE_SETTING = "saml2.uidAttribute";
     public static final String X509_CERTIFICATE_SETTING = "saml2.x509Certificate";
     public static final String IDP_REQUIRED_SETTING = "saml2.idpRequired";
+    public static final String ALLOW_OVERRIDE_SETTING = "saml2.allowOverride";
+    public static final String OVERRIDE_PIN_SETTING = "saml2.overridePin";
     public static final String REDIRECT_URL_SETTING = "saml2.redirectUrl";
     public static final String AUTO_CREATE_USER_SETTING = "saml2.autoCreateUser";
     public static final String AUTO_CREATE_USER_DEFAULT_GROUP_SETTING = "saml2.autoCreateUserDefaultGroup";
@@ -56,8 +58,16 @@ public class SAMLConfig {
         pluginSettings.put(IDP_REQUIRED_SETTING, idpRequired);
     }
 
+    public void setAllowOverride(String allowOverride) {
+        pluginSettings.put(ALLOW_OVERRIDE_SETTING, allowOverride);
+    }
+
     public void setRedirectUrl(String redirectUrl) {
         pluginSettings.put(REDIRECT_URL_SETTING, redirectUrl);
+    }
+
+    public void setOverridePin(String overridePin) {
+        pluginSettings.put(OVERRIDE_PIN_SETTING, overridePin);
     }
 
     public void setAutoCreateUser(String autoCreateUser) {
@@ -88,6 +98,19 @@ public class SAMLConfig {
             return false;
         }
     }
+
+    public String getAllowOverride() {
+        return StringUtils.defaultString((String)pluginSettings.get(ALLOW_OVERRIDE_SETTING));
+    }
+
+    public boolean getAllowOverrideFlag() {
+        if (StringUtils.defaultString((String)pluginSettings.get(ALLOW_OVERRIDE_SETTING)).equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
     public String getAutoCreateUser() {
         return StringUtils.defaultString((String)pluginSettings.get(AUTO_CREATE_USER_SETTING));
@@ -134,12 +157,16 @@ public class SAMLConfig {
         return StringUtils.defaultString((String)pluginSettings.get(REDIRECT_URL_SETTING));
     }
 
+    public String getOverridePin() {
+        return StringUtils.defaultString((String)pluginSettings.get(OVERRIDE_PIN_SETTING));
+    }
+
     public void setDefaultBaseUrl(String defaultBaseURL) {
         this.defaultBaseURL = defaultBaseURL;
     }
 
     public String getAlias() {
-        return "confluenceSAML";
+        return "bitiumSAML";
     }
 
     public String getBaseUrl() {

@@ -4,14 +4,14 @@
 	<groupId>com.bitium.saml</groupId>
 	<artifactId>SAML2Commons</artifactId>
 	<packaging>jar</packaging>
-	<version>1.1.5</version>
+	<version>1.1.7</version>
 	<name>SAML2Commons</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
-			<version>1.2.16</version>
+			<version>1.2.17</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
